@@ -7,7 +7,8 @@ strict: false
 
 datasets:
   - path: milsunone/cural_claude_format_V2.1
-    name: TRAINING_READY
+    data_files:
+      - TRAINING_READY.jsonl
     type: completion # format from earlier
     field: text # Optional[str] default: text, field to use for completion data
 
@@ -62,3 +63,4 @@ save_total_limit: 10
 
 warmup_steps: 5
 evals_per_epoch: 1
+saves_per_epoch: 1
