@@ -62,4 +62,3 @@ save_total_limit: 10
 
 warmup_steps: 5
 evals_per_epoch: 1
-saves_per_epoch: 1
