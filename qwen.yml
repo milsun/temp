@@ -1,0 +1,65 @@
+base_model: Qwen/Qwen2.5-32B
+trust_remote_code: true
+
+load_in_8bit: false
+load_in_4bit: true
+strict: false
+
+datasets:
+  - path: milsunone/cural_claude_format_V2.1
+    name: TRAINING_READY
+    type: completion # format from earlier
+    field: text # Optional[str] default: text, field to use for completion data
+
+dataset_prepared_path:
+val_set_size: 0.05
+output_dir: ./outputs/out
+
+sequence_len: 12048
+sample_packing: true
+eval_sample_packing: true
+pad_to_sequence_len: true
+
+adapter: qlora
+lora_model_dir:
+lora_r: 64
+lora_alpha: 64
+lora_dropout: 0.00
+lora_target_linear: true
+lora_fan_in_fan_out:
+
+wandb_project: cural_2.1_qwen2.5_32B
+wandb_entity:
+wandb_watch:
+wandb_name:
+wandb_log_model:
+
+gradient_accumulation_steps: 4
+micro_batch_size: 1
+num_epochs: 10
+optimizer: adamw_torch
+lr_scheduler: cosine
+learning_rate: 0.0002
+
+train_on_inputs: false
+group_by_length: false
+bf16: auto
+fp16:
+tf32: true
+
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: false
+early_stopping_patience:
+resume_from_checkpoint:
+local_rank:
+logging_steps: 10
+xformers_attention:
+flash_attention: true
+
+save_steps: 50
+save_total_limit: 10
+
+warmup_steps: 5
+evals_per_epoch: 1
+saves_per_epoch: 1
