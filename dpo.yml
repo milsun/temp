@@ -26,8 +26,8 @@ pad_to_sequence_len: true
 
 adapter: qlora
 lora_model_dir:
-lora_r: 64
-lora_alpha: 64
+lora_r: 32
+lora_alpha: 32
 lora_dropout: 0.00
 lora_target_linear: true
 lora_fan_in_fan_out:
