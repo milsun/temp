@@ -9,7 +9,7 @@ rl: dpo
 datasets:
   - path: milsunone/cural_claude_format_V2.1_dpo
     data_files:
-      - DPO.csv
+      - DPO.jsonl
     type: completion 
     field_prompt: prompt
     field_chosen: ideal_response
