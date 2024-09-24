@@ -11,7 +11,7 @@ datasets:
     data_files:
       - DPO.csv
     type: completion 
-    field: prompt
+    field_prompt: prompt
     field_chosen: ideal_response
     field_rejected: worst_response
 
