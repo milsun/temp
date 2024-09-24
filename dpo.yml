@@ -7,7 +7,7 @@ strict: false
 
 rl: dpo
 datasets:
-  - path: milsunone/cural_claude_format_V2.1
+  - path: milsunone/cural_claude_format_V2.1_dpo
     data_files:
       - DPO.csv
     type: completion 
